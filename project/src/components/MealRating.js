@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const MealRating = () => {
-  const { id } = useParams(); // Získání ID z URL
+  const { id } = useParams(); 
   const [price, setPrice] = useState(0);
   const [portion, setPortion] = useState(0);
   const [temperature, setTemperature] = useState(0);

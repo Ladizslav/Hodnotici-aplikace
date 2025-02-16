@@ -5,7 +5,6 @@ const MealList = () => {
   const meals = [
     { id: 1, date: '2023-10-01', name: 'Svíčková', rating: 4 },
     { id: 2, date: '2023-10-02', name: 'Guláš', rating: 3 },
-    // Další obědy...
   ];
 
   return (

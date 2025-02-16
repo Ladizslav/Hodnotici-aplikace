@@ -6,7 +6,7 @@ const Header = ({ username }) => {
   return (
     <header>
       <div className="logo">
-        <img src={logo} alt="Logo" style={{ height: '50px' }} />
+        <img src={logo} alt="Logo" />
       </div>
       <nav>
         <ul className="nav-links">
@@ -21,7 +21,7 @@ const Header = ({ username }) => {
           </li>
         </ul>
       </nav>
-      {username && <div className="username">Welcome, {username}</div>}
+      {username && <div className="username">{username}</div>}
     </header>
   );
 };
