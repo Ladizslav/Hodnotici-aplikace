@@ -1,0 +1,39 @@
+Backend ověřování, skrz mail.
+Backend vypocet ratingu obeda - (porce+teplota+vzhled+apetit/4) ✅
+
+mysql databázi ✅
+
+Table_login
+login - varchar (50)
+heslo - varchar (50) 
+
+Table_obedy
+Hlavni_chod_s_prilohou - varchar (300)
+Polevka - varchar (300)
+Dezert - varchar (300)
+Piti - varchar (300)
+datum - date
+
+Table_rating
+FK_Table_login - int
+FK_Table_obedy - int
+Priplatek - int
+Porce - int (check 0-5)
+Teplota - int (check 0-5)
+Vzhled - int (check 0-5)
+Apetit - chuť - int (check 0-5)
+Hodnoceno - bit 
+
+
+Filtr - pohledy z DB ✅
+1. seradit podle Table_obedy - data
+2. ukazat jen kde bit 1 v tomto tydnu
+3. ukazat jen kde bit 0 v tomto tydnu
+4. ukazat jen kde bit 1
+5. ukazat jen kde bit 0
+
+
+
+separatne polivka, Hlavni chod, dezert, piti,
+
+
