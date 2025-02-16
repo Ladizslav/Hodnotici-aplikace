@@ -1,4 +1,3 @@
-/* Základní styly pro celou stránku */
 body {
   background-image: url('../assets/background.jpg');
   background-size: cover;
@@ -9,35 +8,32 @@ body {
   padding: 0;
 }
 
-/* Header */
 header {
-  position: fixed; /* Fixovaný header nahoře */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 120px; /* Pevná výška headeru */
+  height: 120px;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Vertikální zarovnání obsahu */
-  padding: 0 20px; /* Odsazení zleva a zprava */
+  align-items: center;
+  padding: 0 20px;
   background-color: #f8f9fa;
   border-bottom: 1px solid #ddd;
-  z-index: 1000; /* Zajistí, že header bude nad ostatním obsahem */
-  box-sizing: border-box; /* Zahrne padding do šířky */
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
-/* Logo v headeru */
 .logo img {
-  height: auto; /* Výška se přizpůsobí */
-  max-height: 100px; /* Maximální výška loga */
-  width: auto; /* Zachová poměr stran */
+  height: auto;
+  max-height: 100px;
+  width: auto;
 }
 
-/* Navigační odkazy v headeru */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px; /* Mezery mezi odkazy */
+  gap: 20px;
   margin: 0;
   padding: 0;
 }
@@ -56,27 +52,24 @@ header {
   text-decoration: underline;
 }
 
-/* Uživatelské jméno v headeru */
 .username {
   font-size: 18px;
-  white-space: nowrap; /* Zabraňuje zalomení textu */
-  overflow: hidden; /* Skryje přetečení */
-  text-overflow: ellipsis; /* Zobrazí "..." pokud je text příliš dlouhý */
-  max-width: 200px; /* Omezí maximální šířku uživatelského jména */
-  margin-left: 20px; /* Odsazení od navigace */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  margin-left: 20px;
 }
 
-/* Hlavní obsah aplikace */
 .app {
   text-align: center;
   padding: 40px;
   width: 100%;
   max-width: 800px;
-  margin: 140px auto 0; /* Odsazení shora, aby obsah začínal pod headerem */
+  margin: 140px auto 0;
 }
 
-/* Přihlášení a registrace */
-.login, .register {
+.login, .register, .meal-list, .meal-rating, .filters-menu {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 40px;
   border-radius: 10px;
@@ -113,28 +106,18 @@ header {
   font-size: 16px;
 }
 
-.login button, .register button {
+.login button, .register button, .meal-list button, .filters-menu button {
   padding: 10px;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
   cursor: pointer;
+  font-size: 16px;
 }
 
-.login button:hover, .register button:hover {
+.login button:hover, .register button:hover, .meal-list button:hover, .filters-menu button:hover {
   background-color: #0056b3;
-}
-
-/* Seznam jídel */
-.meal-list {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 40px;
-  border-radius: 10px;
-  max-width: 600px;
-  margin: 20px auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .meal-list ul {
@@ -167,57 +150,24 @@ header {
   text-decoration: underline;
 }
 
-/* Tlačítko Filtry a rozbalovací menu */
-.meal-list button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-
-.meal-list button:hover {
-  background-color: #0056b3;
-}
-
 .filters-menu {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
   padding: 15px;
-  background-color: rgba(255, 255, 255, 0.95); /* Bílý box s lehkou průhledností */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Stín pro lepší vizuální oddělení */
-  border: 1px solid #ddd; /* Tenký rámeček */
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ddd;
 }
 
 .filters-menu button {
-  padding: 8px 12px; /* Menší odsazení */
-  background-color: #f8f9fa; /* Světlé pozadí */
-  color: #007bff; /* Modrá barva textu */
-  border: 1px solid #007bff; /* Modrý rámeček */
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px; /* Menší písmo */
-  transition: background-color 0.3s, color 0.3s; /* Hladký přechod */
+  padding: 8px 12px;
+  background-color: #f8f9fa;
+  color: #007bff;
+  border: 1px solid #007bff;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .filters-menu button:hover {
-  background-color: #007bff; /* Modré pozadí při najetí */
-  color: white; /* Bílý text při najetí */
-}
-
-/* Hodnocení jídel */
-.meal-rating {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 40px;
-  border-radius: 10px;
-  max-width: 600px;
-  margin: 20px auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #007bff;
+  color: white;
 }
 
 .meal-rating label {
@@ -225,22 +175,11 @@ header {
   margin: 15px 0;
 }
 
-/* Tlačítka */
 button {
   padding: 15px 30px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
   font-size: 16px;
 }
 
-button:hover {
-  background-color: #0056b3;
-}
-
-/* Inputy */
 input {
   display: block;
   width: 100%;
@@ -252,16 +191,7 @@ input {
 }
 
 .meal-list > button {
-  padding: 8px 16px; /* Menší odsazení */
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px; /* Menší písmo */
+  padding: 8px 16px;
+  font-size: 14px;
   margin-bottom: 10px;
-}
-
-.meal-list > button:hover {
-  background-color: #0056b3;
 }
