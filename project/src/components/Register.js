@@ -4,35 +4,44 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState(''); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validace hesel
-    if (password !== confirmPassword) {
-      alert('Hesla se neshodují!');
+    const emailPattern = /^[^\s@]+@spsejecna\.cz$/;
+    if (!emailPattern.test(email)) {
+      setError('E-mail musí končit na @spsejecna.cz');
       return;
     }
 
-    // Zde byste přidali logiku pro registraci
+    if (password !== confirmPassword) {
+      setError('Hesla se neshodují!');
+      return;
+    }
+
     console.log('Registrace:', { email, password });
 
-    // Vyčištění formuláře po odeslání
     setEmail('');
     setPassword('');
     setConfirmPassword('');
+    setError(''); 
   };
 
   return (
     <div className="register">
       <h2>Registrace</h2>
+      {error && <p style={{ color: 'red' }}>{error}</p>} {}
       <form onSubmit={handleSubmit}>
         <div>
           <label>Email:</label>
           <input
             type="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setError(''); 
+            }}
             required
           />
         </div>

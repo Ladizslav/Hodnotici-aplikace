@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link pro navigaci
+import { Link } from 'react-router-dom'; 
 import logo from './logo.png';
 
 const Header = ({ username }) => {
@@ -11,13 +11,13 @@ const Header = ({ username }) => {
       <nav>
         <ul className="nav-links">
           <li>
-            <Link to="/">Seznam obědů</Link> {/* Odkaz na hlavní stránku */}
+            <Link to="/">Seznam obědů</Link> {}
           </li>
           <li>
-            <Link to="/login">Login</Link> {/* Odkaz na přihlášení */}
+            <Link to="/login">Login</Link> {}
           </li>
           <li>
-            <Link to="/register">Register</Link> {/* Odkaz na registraci */}
+            <Link to="/register">Register</Link> {}
           </li>
         </ul>
       </nav>
