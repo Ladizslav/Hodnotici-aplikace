@@ -1,3 +1,4 @@
+/* Základní styly pro celou stránku */
 body {
   background-image: url('../assets/background.jpg');
   background-size: cover;
@@ -8,6 +9,7 @@ body {
   padding: 0;
 }
 
+/* Header */
 header {
   position: fixed; /* Fixovaný header nahoře */
   top: 0;
@@ -24,12 +26,14 @@ header {
   box-sizing: border-box; /* Zahrne padding do šířky */
 }
 
+/* Logo v headeru */
 .logo img {
   height: auto; /* Výška se přizpůsobí */
-  max-height: 200px; /* Maximální výška loga */
+  max-height: 100px; /* Maximální výška loga */
   width: auto; /* Zachová poměr stran */
 }
 
+/* Navigační odkazy v headeru */
 .nav-links {
   list-style: none;
   display: flex;
@@ -52,6 +56,7 @@ header {
   text-decoration: underline;
 }
 
+/* Uživatelské jméno v headeru */
 .username {
   font-size: 18px;
   white-space: nowrap; /* Zabraňuje zalomení textu */
@@ -61,6 +66,7 @@ header {
   margin-left: 20px; /* Odsazení od navigace */
 }
 
+/* Hlavní obsah aplikace */
 .app {
   text-align: center;
   padding: 40px;
@@ -69,7 +75,8 @@ header {
   margin: 140px auto 0; /* Odsazení shora, aby obsah začínal pod headerem */
 }
 
-.login, .register, .meal-list, .meal-rating {
+/* Přihlášení a registrace */
+.login, .register {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 40px;
   border-radius: 10px;
@@ -78,16 +85,147 @@ header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-input {
-  display: block;
-  width: 100%;
-  padding: 15px;
-  margin: 15px 0;
+.login h2, .register h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login form, .register form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login form div, .register form div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.login label, .register label {
+  font-weight: bold;
+}
+
+.login input, .register input {
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
 }
 
+.login button, .register button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login button:hover, .register button:hover {
+  background-color: #0056b3;
+}
+
+/* Seznam jídel */
+.meal-list {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.meal-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.meal-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.meal-list li:last-child {
+  border-bottom: none;
+}
+
+.meal-list li span {
+  flex: 1;
+}
+
+.meal-list li a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.meal-list li a:hover {
+  text-decoration: underline;
+}
+
+/* Tlačítko Filtry a rozbalovací menu */
+.meal-list button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.meal-list button:hover {
+  background-color: #0056b3;
+}
+
+.filters-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.95); /* Bílý box s lehkou průhledností */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Stín pro lepší vizuální oddělení */
+  border: 1px solid #ddd; /* Tenký rámeček */
+}
+
+.filters-menu button {
+  padding: 8px 12px; /* Menší odsazení */
+  background-color: #f8f9fa; /* Světlé pozadí */
+  color: #007bff; /* Modrá barva textu */
+  border: 1px solid #007bff; /* Modrý rámeček */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px; /* Menší písmo */
+  transition: background-color 0.3s, color 0.3s; /* Hladký přechod */
+}
+
+.filters-menu button:hover {
+  background-color: #007bff; /* Modré pozadí při najetí */
+  color: white; /* Bílý text při najetí */
+}
+
+/* Hodnocení jídel */
+.meal-rating {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.meal-rating label {
+  display: block;
+  margin: 15px 0;
+}
+
+/* Tlačítka */
 button {
   padding: 15px 30px;
   background-color: #007bff;
@@ -102,60 +240,28 @@ button:hover {
   background-color: #0056b3;
 }
 
-.meal-list ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.meal-list li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  border-bottom: 1px solid #ccc;
-}
-
-.meal-list li:last-child {
-  border-bottom: none;
-}
-
-.meal-rating label {
+/* Inputy */
+input {
   display: block;
-  margin: 15px 0;
-}
-
-.register h2, .login h2 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.register form, .login form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.register label, .login label {
-  font-weight: bold;
-}
-
-.register input, .login input {
+  width: 100%;
   padding: 15px;
+  margin: 15px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
 }
 
-.register button, .login button {
-  padding: 15px;
+.meal-list > button {
+  padding: 8px 16px; /* Menší odsazení */
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
   cursor: pointer;
+  font-size: 14px; /* Menší písmo */
+  margin-bottom: 10px;
 }
 
-.register button:hover, .login button:hover {
+.meal-list > button:hover {
   background-color: #0056b3;
 }
