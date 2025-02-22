@@ -7,10 +7,8 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Zde byste přidali logiku pro přihlášení
     console.log('Přihlášení:', { username, password });
 
-    // Vyčištění formuláře po odeslání
     setUsername('');
     setPassword('');
   };

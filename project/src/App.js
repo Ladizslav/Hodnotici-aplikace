@@ -8,7 +8,7 @@ import MealRating from './components/MealRating';
 import './App.css';
 
 const App = () => {
-  const username = "JohnDoe"; // Toto byste získali z přihlášení
+  const username = "Žábis"; 
 
   return (
     <Router>
@@ -25,4 +25,4 @@ const App = () => {
   );
 };
 
-export default App; // Toto je důležité!
+export default App; 
