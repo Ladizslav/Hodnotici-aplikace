@@ -6,18 +6,20 @@ const Header = ({ username }) => {
   return (
     <header>
       <div className="logo">
-        <img src={logo} alt="Logo" />
+        <Link to="/">
+          <img src={logo} alt="Logo" />
+        </Link>
       </div>
       <nav>
         <ul className="nav-links">
           <li>
-            <Link to="/">Seznam obědů</Link> {}
+            <Link to="/">Seznam obědů</Link>
           </li>
           <li>
-            <Link to="/login">Login</Link> {}
+            <Link to="/login">Login</Link>
           </li>
           <li>
-            <Link to="/register">Register</Link> {}
+            <Link to="/">Logout</Link>
           </li>
         </ul>
       </nav>
