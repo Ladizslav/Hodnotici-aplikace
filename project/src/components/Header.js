@@ -1,8 +1,27 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; 
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from './logo.png';
 
-const Header = ({ username }) => {
+const Header = () => {
+  const navigate = useNavigate();
+  const [username, setUsername] = useState('');
+
+  useEffect(() => {
+    const storedUsername = localStorage.getItem('username');
+    if (storedUsername) {
+      setUsername(storedUsername);
+    }
+  }, []);
+
+  const isLoggedIn = !!localStorage.getItem('token');
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+    setUsername('');
+    navigate('/login');
+  };
+
   return (
     <header>
       <div className="logo">
@@ -15,15 +34,22 @@ const Header = ({ username }) => {
           <li>
             <Link to="/">Seznam obědů</Link>
           </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/">Logout</Link>
-          </li>
+          {isLoggedIn ? (
+            <li>
+              <Link to="/login" onClick={handleLogout} className="logout-link">
+                Logout
+              </Link>
+            </li>
+          ) : (
+            <li>
+              <Link to="/login" className="login-link">
+                Login
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
-      {username && <div className="username">{username}</div>}
+      {isLoggedIn && <div className="username">{username}</div>}
     </header>
   );
 };
