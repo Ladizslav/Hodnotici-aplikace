@@ -73,7 +73,7 @@ nav {
   padding: 40px;
   width: 100%;
   max-width: 800px;
-  margin: 140px auto 0; /* Odsazení pod header */
+  margin: 40px auto 0; /* Odsazení pod header */
 }
 
 .login, .register, .meal-list, .meal-rating, .filters-menu {
@@ -87,7 +87,8 @@ nav {
 
 .login h2, .register h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  font-size: 28px;
 }
 
 .login form, .register form {
@@ -195,7 +196,7 @@ button {
 
 input {
   display: block;
-  width: 100%;
+  width: auto;
   padding: 15px;
   margin: 15px 0;
   border: 1px solid #ccc;
@@ -252,7 +253,7 @@ input {
 }
 
 .meal-list {
-  padding-top: 140px;
+  padding-top: 20px;
   margin-bottom: 40px; 
 }
 
