@@ -4,7 +4,7 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
-const config = require('project/src/components/config.js');
+const config = require('../components/config');
 
 const app = express();
 app.use(express.json());
