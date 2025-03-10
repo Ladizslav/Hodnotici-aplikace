@@ -94,6 +94,24 @@ async function scrapeJecnaLunches() {
   }
 }
 
+let cachedLunches = [];
+
+async function refreshLunchData() {
+    try {
+        const data = await scrapeJecnaLunches();
+        cachedLunches = data;
+        console.log("Lunch data updated at:", new Date());
+    } catch (error) {
+        console.error("Error updating lunch data:", error.message);
+        console.error("Stack:", error.stack);
+    }
+}
+
+refreshLunchData();
+
+setInterval(refreshLunchData, 24 * 60 * 60 * 1000);
+
+
 app.post("/api/login", (req, res) => {
   const { username, password } = req.body;
 
